@@ -6,24 +6,35 @@ import Link from "next/link"
 
 const Navbar = () => {
 	const [navIsOpen, setNavIsOpen] = useState(false)
+	const scrollHandler = (e: any) => {
+		e.preventDefault();
+		setNavIsOpen(false)
+		const hashVal = e.currentTarget.getAttribute('href').split("/").join("")
+		// @ts-ignore
+		window.history.pushState(null, null, `${hashVal}`)
+		document.querySelector(hashVal)?.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
+
 	return (
 		<>
 			<nav className="flex w-full justify-between pb-4 bg-[#ffffff05] border-b border-[#ffffff4d] md:gap-0 gap-2 relative backdrop-blur-md">
 				<div className="h-[43px] flex-1 md:flex-initial">
-					<Link href="/#section-home" className="contents"><ElpisImage src="/images/blur/logo-green.png" alt="Crafter" title="Crafter" className="h-full" /></Link>
+					<Link onClick={scrollHandler} href="/#section-home" className="contents"><ElpisImage src="/images/blur/logo-green.png" alt="Crafter" title="Crafter" className="h-full" /></Link>
 				</div>
 				<div className="flex items-center gap-5 md:gap-8">
 					<div className="hidden md:flex items-center">
 						<ul className="flex gap-5 md:gap-8 items-center">
-							<li><Link className="hover:text-linkHover duration-75	transition-all" href="/#section-about">About</Link></li>
-							<li><Link className="hover:text-linkHover duration-75	transition-all" href="/#section-location">Location</Link></li>
-							<li><Link className="hover:text-linkHover duration-75	transition-all" href="/#section-menu">Menu</Link></li>
-							<li><Link className="hover:text-linkHover duration-75	transition-all" href="/#section-franchise">Franchise</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-about">About</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-location">Location</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-menu">Menu</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-franchise">Franchise</Link></li>
 						</ul>
 					</div>
 					<div className="hidden ssm:flex items-center text-brightGreen">
-						<Link href="/#section-order" className="flex items-center gap-[8px] md:px-[16px] md:py-[12px] px-[14px] py-[8px] rounded-full border-2 border-brightGreen">
-							<span>Order Now</span>
+						<Link onClick={scrollHandler} href="/#section-book" className="flex items-center gap-[8px] md:px-[16px] md:py-[12px] px-[14px] py-[8px] rounded-full border-2 border-brightGreen">
+							<span>Book Now</span>
 						</Link>
 					</div>
 				</div>
@@ -36,13 +47,13 @@ const Navbar = () => {
 					<div className="flex flex-col gap-[50px]">
 						<div className="left-[-11px]"><Hamburger toggled={navIsOpen} toggle={setNavIsOpen} distance="sm" rounded /></div>
 						<ul className="flex gap-[32px] flex-col items-start text-sm">
-							<li><Link className="hover:text-[#ff825d] duration-75	transition-all" onClick={() => setNavIsOpen(false)} href="/#section-about">About</Link></li>
-							<li><Link className="hover:text-[#ff825d] duration-75	transition-all" onClick={() => setNavIsOpen(false)} href="/#section-location">Location</Link></li>
-							<li><Link className="hover:text-[#ff825d] duration-75	transition-all" onClick={() => setNavIsOpen(false)} href="/#section-menu">Menu</Link></li>
-							<li><Link className="hover:text-[#ff825d] duration-75	transition-all" onClick={() => setNavIsOpen(false)} href="/#section-franchise">Franchise</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-about">About</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-location">Location</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-menu">Menu</Link></li>
+							<li><Link onClick={scrollHandler} className="hover:text-linkHover duration-75	transition-all" href="/#section-franchise">Franchise</Link></li>
 							<div className="flex ssm:hidden items-center text-[#00C914]">
-								<Link href="/#section-order" className="flex items-center gap-[8px] md:px-[16px] md:py-[12px] px-[14px] py-[8px] rounded-full border-2 border-brightGreen">
-									<span>Order Now</span>
+								<Link onClick={scrollHandler} href="/#section-book" className="flex items-center gap-[8px] md:px-[16px] md:py-[12px] px-[14px] py-[8px] rounded-full border-2 border-brightGreen">
+									<span>Book Now</span>
 								</Link>
 							</div>
 						</ul>

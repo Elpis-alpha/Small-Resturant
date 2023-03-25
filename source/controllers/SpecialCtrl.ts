@@ -686,3 +686,13 @@ export const createQueryString = (queryObject: any) => {
   return queryString
 
 }
+
+export const scrollHandler = (e: any) => {
+  e.preventDefault();
+  const hashVal = e.currentTarget.getAttribute('href').split("/").join("")
+  // @ts-ignore
+  window.history.pushState(null, null, `${hashVal}`)
+  document.querySelector(hashVal)?.scrollIntoView({
+    behavior: 'smooth'
+  });
+}
