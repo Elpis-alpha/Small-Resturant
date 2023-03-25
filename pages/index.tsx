@@ -1,3 +1,4 @@
+import Footer from '@/source/components/general/Footer'
 import AboutSection from '@/source/components/section-about/AboutSection'
 import BookSection from '@/source/components/section-book/BookSection'
 import FranchiseSection from '@/source/components/section-franchise/FranchiseSection'
@@ -20,6 +21,7 @@ export default function Home() {
         <BookSection />
         <FranchiseSection />
       </main>
+      <Footer />
     </>
   )
 }
