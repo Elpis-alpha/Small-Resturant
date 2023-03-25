@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@types/node": "18.15.7",
     "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
+    "email-js": "^2.0.2",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "hamburger-react": "^2.5.0",
@@ -19,7 +21,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "typescript": "5.0.2"
+    "react-loader-spinner": "^5.3.4",
+    "react-toastify": "^9.1.2",
+    "typescript": "5.0.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

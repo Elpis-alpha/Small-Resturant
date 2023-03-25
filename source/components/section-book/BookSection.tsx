@@ -1,5 +1,7 @@
 import { FormEvent, useState } from 'react'
 import ElpisImage from '../general/ElpisImage';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const BookSection = () => {
 	const [name, setName] = useState("");
@@ -8,15 +10,35 @@ const BookSection = () => {
 	const [date, setDate] = useState("");
 	const [time, setTime] = useState("");
 	const [people, setPeople] = useState("");
+	const [sendingMail, setSendingMail] = useState(false)
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		console.log("Name: ", name);
-		console.log("Email: ", email);
-		console.log("Phone: ", phone);
-		console.log("Date: ", date);
-		console.log("Time: ", time);
-		console.log("People: ", people);
+		if (sendingMail) return toast.error("Please be patient")
+		setSendingMail(true)
+		toast.info("Sending mail")
+		const form = event.target as HTMLFormElement
+		emailjs.sendForm('service_vnmbxe9', 'template_dbkcwpl', form, '1kUZnj4b88VZl_Gfk')
+			.then((result) => {
+				setSendingMail(false)
+				toast.success("Email sent")
+				setName("")
+				setEmail("")
+				setPhone("")
+				setDate("")
+				setTime("")
+				setPeople("")
+				form.reset()
+			}, (error) => {
+				setSendingMail(false)
+				toast.error("Email failed to send")
+				console.log(error.text);
+			}).catch(err => {
+				toast.error("Email failed to send")
+				setSendingMail(false)
+			}).finally(() => {
+				setSendingMail(false)
+			});
 	};
 
 	return (
@@ -111,8 +133,9 @@ const BookSection = () => {
 					<button
 						type="submit"
 						className="px-4 py-2 font-semibold rounded-md focus:outline-none bg-brightGreen text-white hover:bg-hoverBrightGreen focus:bg-hoverBrightGreen"
+						disabled={sendingMail}
 					>
-						Make a Reservation
+						{sendingMail ? "Sending Mail..." : "Make a Reservation"}
 					</button>
 				</form>
 			</div>

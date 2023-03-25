@@ -11,6 +11,10 @@
     transition: all .5s;
   }
 
+  *:disabled {
+    opacity: .5;
+  }
+
   html,
   body {
     background-color: #FFFFFF;

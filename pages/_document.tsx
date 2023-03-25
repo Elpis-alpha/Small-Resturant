@@ -14,6 +14,10 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
     </Html>
   )
 }
