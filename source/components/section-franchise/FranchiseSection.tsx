@@ -4,10 +4,10 @@ import ElpisImage from '../general/ElpisImage'
 
 const FranchiseSection = () => {
 	return (
-		<section id="section-franchise" className="w-full px-6 py-10">
-			<div className="px-6 md:px-10 flex flex-col md:flex-row gap-4 z-20">
+		<section id="section-franchise" className="w-full px-6 md:px-12 py-10">
+			<div className="flex flex-col md:flex-row gap-4 z-20">
 				<div className="w-[100%] md:w-[50%] flex flex-col gap-6 z-20 items-start lg:py-5">
-					<h1 className='font-sans font-bold text-5xl lg:text-6xl'>Follow Our Social Media</h1>
+					<h1 className='font-sans font-bold text-4xl ssm:text-5xl lg:text-6xl'>Follow Our Social Media</h1>
 					<a href={twitter} className='flex gap-2 items-center px-6 py-4 rounded-full shadow-md' target="_blank" rel="noopener noreferrer">
 						<FaTwitter />
 						<span className='inline-block pl-1'>{twitter.replace("https://www.", "")}</span>

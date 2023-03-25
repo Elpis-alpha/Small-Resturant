@@ -9,8 +9,8 @@ const MenuSection = ({ menu }: { menu: any }) => {
 
 	// console.log(menu)
 	return (
-		<section id="section-menu" className="w-full px-6 py-32">
-			<div className="px-6 md:px-10 flex flex-col gap-6 z-20">
+		<section id="section-menu" className="w-full px-6 md:px-12 py-32">
+			<div className="flex flex-col gap-6 z-20">
 				<h1 className='font-sans font-bold text-4xl text-center'>Featured Menu</h1>
 				<div className="">
 					<div className="flex gap-4 items-center text-center flex-wrap justify-center">

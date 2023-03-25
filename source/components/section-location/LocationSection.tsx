@@ -3,8 +3,8 @@ import ElpisImage from '../general/ElpisImage'
 
 const LocationSection = () => {
 	return (
-		<section id="section-location" className="w-full bg-lightGreen px-6">
-			<div className="px-6 md:px-10 flex flex-col md:flex-row gap-4 static">
+		<section id="section-location" className="w-full bg-lightGreen px-6 md:px-12">
+			<div className="flex flex-col md:flex-row gap-4 static">
 				<div className="w-[25%] hidden md:flex static z-10">
 					<ElpisImage src='/images/blur/shop.jpg' alt="shop" className="w-[80%] h-full object-cover absolute top-0 left-0 bottom-0" />
 				</div>

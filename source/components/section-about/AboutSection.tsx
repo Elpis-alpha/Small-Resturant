@@ -4,16 +4,13 @@ import ElpisImage from "../general/ElpisImage"
 const AboutSection = () => {
 	return (
 		<section id="section-about" className="w-full">
-			<div className="px-6 py-28 md:px-10 md:py-40 text-center z-20">
+			<div className="px-6 md:px-12 py-28 md:py-40 text-center z-20">
 				<div className="flex items-center justify-center">
 					<Image src="/images/logo.png" blurDataURL="/images/blur/logo.png" alt="Crafter" title="Crafter" width={346} height={113} className="w-[130px]" />
 				</div>
-				<div className="pt-6 w-100% sm:w-[90%] m-auto">
+				<div className="pt-6 w-100% sm:w-[90%] m-auto opacity-60">
 					<p>
 						Crafter Catering is a specialized catering service that excels in catering for various events.
-						With our extensive experience in the industry, we have gained expertise in catering for a diverse range of culinary artisans,
-						including eatery, bakery, pastry, and cake specialists. Whether {"you're"} looking for a caterer to provide delicious
-						treats for a corporate event or an intimate gathering, Crafter Catering is the perfect choice.
 						We understand the importance of creating an exceptional culinary experience for your guests and are
 						committed to providing high-quality food and exceptional service.
 					</p>
