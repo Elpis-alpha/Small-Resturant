@@ -1,0 +1,5 @@
+export const twitter = "https://www.twitter.com/craftercatering"
+export const instagram = "https://www.instagram.com/craftercatering"
+export const facebook = "https://www.facebook.com/lusciousqtr"
+export const mail = "mailto:info@Crafter.com"
+export const tel = "tel:+97455925933"

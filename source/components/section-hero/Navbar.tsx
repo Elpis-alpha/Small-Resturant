@@ -3,6 +3,7 @@ import ElpisImage from "../general/ElpisImage"
 import { useState } from "react"
 import { FaInstagram, FaFacebook, FaEnvelope, FaPhone } from "react-icons/fa"
 import Link from "next/link"
+import { facebook, instagram, mail, tel } from "@/source/__env"
 
 const Navbar = () => {
 	const [navIsOpen, setNavIsOpen] = useState(false)
@@ -60,10 +61,10 @@ const Navbar = () => {
 					</div>
 					<div className="flex flex-col gap-[30px] text-center">
 						<div className="flex gap-[16px] justify-center">
-							<a href="https://www.instagram.com/craftercatering/" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaInstagram /></a>
-							<a href="https://www.facebook.com/lusciousqtr/" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaFacebook /></a>
-							<a href="mailto:info@Crafter.com" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaEnvelope /></a>
-							<a href="tel:+97455925933" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaPhone /></a>
+							<a href={instagram} target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaInstagram /></a>
+							<a href={facebook} target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaFacebook /></a>
+							<a href={mail} target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaEnvelope /></a>
+							<a href={tel} target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><FaPhone /></a>
 						</div>
 						<div className="flex flex-col gap-[8px] text-[10px]">
 							<span>Crafter Resturant</span>
