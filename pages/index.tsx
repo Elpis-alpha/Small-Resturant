@@ -1,5 +1,6 @@
 import AboutSection from '@/source/components/section-about/AboutSection'
 import HeroSection from '@/source/components/section-hero/HeroSection'
+import LocationSection from '@/source/components/section-location/LocationSection'
 import Head from 'next/head'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <main className='font-body text-darkText text-sm md:text-base z-20 min-h-screen flex flex-col tracking-wide font-semibold max-w-[1550px] mx-auto overflow-hidden'>
         <HeroSection />
         <AboutSection />
+        <LocationSection />
       </main>
     </>
   )

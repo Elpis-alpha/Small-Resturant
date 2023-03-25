@@ -44,4 +44,8 @@
   .outfade-hero {
     background: linear-gradient(to right, #ebffeb, #ebffeb, #ebffeb, #ebffeb, transparent);
   }
+
+  .outfade-loc {
+    background: linear-gradient(to left, #ebffeb, #ebffeb,  #ebffeb, transparent);
+  }
 }
