@@ -1,6 +1,7 @@
 import { scrollHandler } from "@/source/controllers/SpecialCtrl"
 import Image from "next/image"
 import Link from "next/link"
+import ElpisImage from "../general/ElpisImage"
 
 const Hero = () => {
 
@@ -14,7 +15,8 @@ const Hero = () => {
 				</Link>
 			</div>
 			<div className="w-[100%] sm:w-[80%] m-auto md:w-[40%] flex items-center justify-center z-10">
-				<Image src="/images/hero.png" placeholder="blur" blurDataURL="/images/blur/hero.png" width={1538} height={776} className="w-[100%] md:w-[180%] md:left-[-20%] max-w-none" alt="A special dish" />
+				{/* <img src="/images/blur/hero.png" className="w-[100%] md:w-[180%] md:left-[-20%] max-w-none" alt="A special dish" /> */}
+				<ElpisImage src="/images/blur/hero.png" className="w-[100%] md:w-[180%] md:left-[-20%] max-w-none" alt="A special dish" />
 			</div>
 		</div>
 	)

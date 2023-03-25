@@ -7,7 +7,7 @@ const MenuSection = ({ menu }: { menu: any }) => {
 	const listOfMenus: string[] = [...new Set(menu.map((m: any) => m.category))].sort()
 	const [active, setActive] = useState(listOfMenus[0])
 
-	console.log(menu)
+	// console.log(menu)
 	return (
 		<section id="section-menu" className="w-full px-6 py-32">
 			<div className="px-6 md:px-10 flex flex-col gap-6 z-20">
