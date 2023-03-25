@@ -38,3 +38,10 @@
 
   /* Custom Scroll bar END */
 }
+
+@layer components {
+
+  .outfade-hero {
+    background: linear-gradient(to right, #ebffeb, #ebffeb, #ebffeb, #ebffeb, transparent);
+  }
+}

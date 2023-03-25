@@ -1,3 +1,4 @@
+import HeroSection from '@/source/components/section-hero/HeroSection'
 import Head from 'next/head'
 
 export default function Home() {
@@ -8,8 +9,8 @@ export default function Home() {
         <meta name="description" content="Crafter Catering- Events Catering Specialists. Order for Eatery, Bakery, Pastry & Cake Artisans" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='font-body text-darkText text-xs font-normal md:text-sm z-20 min-h-screen flex flex-col'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur error necessitatibus possimus quae placeat cupiditate accusamus facilis distinctio, nisi delectus iure explicabo suscipit, nemo fugiat amet doloremque praesentium provident pariatur.
+      <main className='font-body text-darkText text-sm md:text-base z-20 min-h-screen flex flex-col tracking-wide font-semibold max-w-[1550px] mx-auto overflow-hidden'>
+        <HeroSection />
       </main>
     </>
   )
