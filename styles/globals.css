@@ -8,6 +8,7 @@
     box-sizing: border-box;
     position: relative;
     word-break: break-word;
+    transition: all .5s;
   }
 
   html,

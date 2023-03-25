@@ -1,4 +1,5 @@
 import AboutSection from '@/source/components/section-about/AboutSection'
+import BookSection from '@/source/components/section-book/BookSection'
 import HeroSection from '@/source/components/section-hero/HeroSection'
 import LocationSection from '@/source/components/section-location/LocationSection'
 import Head from 'next/head'
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <LocationSection />
+        <BookSection />
       </main>
     </>
   )

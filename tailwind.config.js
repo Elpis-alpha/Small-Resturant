@@ -25,8 +25,11 @@ module.exports = {
       // Site colors
       darkText: '#383838',
       lightGreen: '#00ff0014',
+      slightGreen: '#00ff0009',
       linkHover: '#3ea74f',
       brightGreen: '#00C914',
+      hoverBrightGreen: '#008a0e',
+      inputGreen: '#38383845',
     },
     fontFamily: {
       "body": ["Roboto", "sans-serif"],
