@@ -3,3 +3,5 @@ type BSelectType = {
 	options?: optType[]
 	onInput?: Function
 }
+
+type activeMenutype = "breakfast" | "soup" | "grill" | "pasta" | "pizza" | "drink"

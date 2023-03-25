@@ -1,0 +1,128 @@
+[
+	{
+		"name": "Pancakes",
+		"price": "$9.99",
+		"description": "Fluffy pancakes served with maple syrup and butter",
+		"category": "breakfast"
+	},
+	{
+		"name": "Eggs Benedict",
+		"price": "$12.99",
+		"description": "Poached eggs on an English muffin with ham and hollandaise sauce",
+		"category": "breakfast"
+	},
+	{
+		"name": "French Toast",
+		"price": "$8.99",
+		"description": "Thick slices of bread soaked in a sweet egg mixture, served with bacon or sausage",
+		"category": "breakfast"
+	},
+	{
+		"name": "Oatmeal",
+		"price": "$5.99",
+		"description": "Creamy oatmeal served with brown sugar and raisins",
+		"category": "breakfast"
+	},
+	{
+		"name": "Fruit Cup",
+		"price": "$4.99",
+		"description": "Freshly cut seasonal fruit served with yogurt",
+		"category": "breakfast"
+	},
+	{
+		"name": "Minestrone Soup",
+		"price": "$6.99",
+		"description": "Hearty vegetable soup with pasta and beans",
+		"category": "soup"
+	},
+	{
+		"name": "Lobster Bisque",
+		"price": "$12.99",
+		"description": "Creamy soup with chunks of lobster meat",
+		"category": "soup"
+	},
+	{
+		"name": "Tomato Soup",
+		"price": "$5.99",
+		"description": "Classic tomato soup served with grilled cheese",
+		"category": "soup"
+	},
+	{
+		"name": "Clam Chowder",
+		"price": "$8.99",
+		"description": "Creamy soup with clams, potatoes, and bacon",
+		"category": "soup"
+	},
+	{
+		"name": "Beef Burger",
+		"price": "$11.99",
+		"description": "Juicy beef patty served on a brioche bun with lettuce, tomato, and cheese",
+		"category": "grill"
+	},
+	{
+		"name": "Grilled Chicken Sandwich",
+		"price": "$9.99",
+		"description": "Marinated chicken breast served on a ciabatta roll with avocado, lettuce, and tomato",
+		"category": "grill"
+	},
+	{
+		"name": "Steak Frites",
+		"price": "$18.99",
+		"description": "Grilled steak served with crispy French fries",
+		"category": "grill"
+	},
+	{
+		"name": "Fish and Chips",
+		"price": "$13.99",
+		"description": "Beer-battered fish served with fries and tartar sauce",
+		"category": "grill"
+	},
+	{
+		"name": "Spaghetti Bolognese",
+		"price": "$12.99",
+		"description": "Classic Italian dish with meat sauce and Parmesan cheese",
+		"category": "pasta"
+	},
+	{
+		"name": "Fettuccine Alfredo",
+		"price": "$14.99",
+		"description": "Rich and creamy pasta dish with Parmesan cheese and garlic",
+		"category": "pasta"
+	},
+	{
+		"name": "Spaghetti Bolognesae",
+		"price": "$11.99",
+		"description": "Classic spaghetti with homemade bolognese sauce",
+		"category": "pasta"
+	},
+	{
+		"name": "Pesto Linguine",
+		"price": "$13.99",
+		"description": "Linguine with fresh pesto sauce, cherry tomatoes, and parmesan cheese",
+		"category": "pasta"
+	},
+	{
+		"name": "Margherita Pizza",
+		"price": "$10.99",
+		"description": "Classic margherita pizza with tomato sauce, mozzarella cheese, and fresh basil",
+		"category": "pizza"
+	},
+	{
+		"name": "Pepperoni Pizza",
+		"price": "$12.99",
+		"description": "Pepperoni pizza with tomato sauce and mozzarella cheese",
+		"category": "pizza"
+	},
+	{
+		"name": "Lemonade",
+		"price": "$2.99",
+		"description": "Freshly squeezed lemonade with a hint of mint",
+		"category": "drink"
+	},
+	{
+		"name": "Iced Tea",
+		"price": "$1.99",
+		"description": "Refreshing iced tea with lemon and sugar",
+		"category": "drink"
+	}
+]
