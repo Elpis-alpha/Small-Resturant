@@ -1,6 +1,6 @@
 import Footer from '@/source/components/general/Footer'
 import AboutSection from '@/source/components/section-about/AboutSection'
-import BookSection from '@/source/components/section-book/BookSection'
+// import BookSection from '@/source/components/section-book/BookSection'
 import FranchiseSection from '@/source/components/section-franchise/FranchiseSection'
 import HeroSection from '@/source/components/section-hero/HeroSection'
 import LocationSection from '@/source/components/section-location/LocationSection'
@@ -23,7 +23,7 @@ export default function Home({ menu }: any) {
         <AboutSection />
         <LocationSection />
         <MenuSection menu={menu.map((menu: any) => getPageMetaData(menu)).filter((x: any) => x.name)} />
-        <BookSection />
+        {/* <BookSection /> */}
         <FranchiseSection />
       </main>
       <Footer />
