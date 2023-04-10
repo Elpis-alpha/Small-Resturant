@@ -26,7 +26,7 @@ const MenuSection = ({ menu }: { menu: any }) => {
 										<Oval width="50px" height="50px" color="#58d764" secondaryColor="#adffb5" />
 									</div>
 								</div>
-								<div className="bg-white px-3 py-4 flex flex-col gap-2 top-[-30px] md:top-[-50px] backdrop-blur-sm w-[90%] shadow-sm">
+								<div className="bg-white px-3 py-4 flex flex-col gap-2 top-[-30px] md:top-[-50px] backdrop-blur-sm w-[90%] shadow-sm z-30">
 									<h2 className="text-4xl text-brightGreen">${item.price}</h2>
 									<h3 className="text-3xl pt-4 font-sans">{item.name}</h3>
 									<p className="opacity-50 pt-3 font-semibold">{item.description}</p>
