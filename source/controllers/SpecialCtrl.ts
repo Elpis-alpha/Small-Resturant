@@ -630,9 +630,9 @@ export const reformImage = (e: any, removeNext: boolean = false) => {
 
       fullSize.className = smallSize.className
 
-      if (smallSize.nextElementSibling && removeNext) smallSize.nextElementSibling.remove()
+      if (smallSize.nextElementSibling && removeNext) smallSize.nextElementSibling?.remove?.()
 
-      smallSize.replaceWith(fullSize)
+      smallSize?.replaceWith?.(fullSize)
 
     } catch (error) {
 

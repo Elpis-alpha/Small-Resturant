@@ -21,8 +21,8 @@ const Navbar = () => {
 	return (
 		<>
 			<nav className="flex w-full justify-between pb-4 bg-[#ffffff05] border-b border-[#ffffff4d] md:gap-0 gap-2 relative backdrop-blur-md">
-				<div className="h-[43px] flex-1 md:flex-initial">
-					<Link onClick={scrollHandler} href="/#section-home" className="contents"><ElpisImage src="/images/blur/logo-green.png" alt="Crafter" title="Crafter" className="h-full" /></Link>
+				<div className="h-[60px] flex-1 md:flex-initial">
+					<Link onClick={scrollHandler} href="/#section-home" className="contents"><ElpisImage src="/images/blur/logo.png" alt="Crafter" title="Crafter" className="h-full" /></Link>
 				</div>
 				<div className="flex items-center gap-5 md:gap-8">
 					<div className="hidden md:flex items-center">
@@ -39,7 +39,7 @@ const Navbar = () => {
 						</Link>
 					</div>
 				</div>
-				<div className="flex md:hidden">
+				<div className="flex md:hidden items-center">
 					<Hamburger toggled={navIsOpen} toggle={setNavIsOpen} distance="sm" rounded />
 				</div>
 			</nav>

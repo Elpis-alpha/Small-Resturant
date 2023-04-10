@@ -9,7 +9,7 @@ const Hero = () => {
 		<div className="flex flex-col md:flex-row">
 			<div className="flex flex-col gap-4 w-[100%] md:w-[60%] pt-4 md:py-8 z-20 justify-center outfade-hero">
 				<h1 className="font-sans font-black text-4xl ssm:text-5xl smm:text-6xl sm:text-7xl lg:text-8xl text-brightGreen whitespace-pre">Taste the<br />Difference</h1>
-				<p className="max-w-[550px]">Crafter Catering specializes in catering for events and is experienced in catering for eatery, bakery, pastry, and cake artisans.</p>
+				<p className="max-w-[550px]">Fresh Bites Grill serves delicious, nutritious meals made with the finest ingredients in a warm and welcoming atmosphere.</p>
 				<Link onClick={scrollHandler} href="/#section-book" className="inline-flex mt-4 self-start items-center md:px-[20px] md:py-[12px] px-[14px] py-[8px] rounded-full text-white bg-brightGreen hover:bg-hoverBrightGreen focus:bg-hoverBrightGreen">
 					<span>Book Now</span>
 				</Link>

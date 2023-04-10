@@ -55,7 +55,7 @@ const BookSection = () => {
 							name="name"
 							value={name}
 							onChange={(event) => setName(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic border border-inputGreen rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. Alice Henderson'
 							required
 						/>
@@ -69,7 +69,7 @@ const BookSection = () => {
 							name="email"
 							value={email}
 							onChange={(event) => setEmail(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic border border-inputGreen rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. alice@gmail.com'
 							required
 						/>
@@ -83,7 +83,7 @@ const BookSection = () => {
 							name="phone"
 							value={phone}
 							onChange={(event) => setPhone(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic border border-inputGreen rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. +974 4444 5020'
 							required
 						/>
@@ -97,7 +97,7 @@ const BookSection = () => {
 							name="date"
 							value={date}
 							onChange={(event) => setDate(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic border border-inputGreen rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. 25th December, 2024'
 							required
 						/>
@@ -111,7 +111,7 @@ const BookSection = () => {
 							name="time"
 							value={time}
 							onChange={(event) => setTime(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic border border-inputGreen rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. 12:30pm'
 							required
 						/>
@@ -125,7 +125,7 @@ const BookSection = () => {
 							name="people"
 							value={people}
 							onChange={(event) => setPeople(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic border border-inputGreen rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. 3 people'
 							required
 						/>

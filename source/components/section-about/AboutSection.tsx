@@ -1,4 +1,3 @@
-import Image from "next/image"
 import ElpisImage from "../general/ElpisImage"
 
 const AboutSection = () => {
@@ -6,18 +5,23 @@ const AboutSection = () => {
 		<section id="section-about" className="w-full">
 			<div className="px-6 md:px-12 py-28 md:py-40 text-center z-20">
 				<div className="flex items-center justify-center">
-					<Image src="/images/logo.png" blurDataURL="/images/blur/logo.png" alt="Crafter" title="Crafter" width={346} height={113} className="w-[130px]" />
+					<h1 className="font-sans font-black text-2xl ssm:text-3xl smm:text-4xl sm:text-5xl lg:text-6xl text-brightGreen">About Us</h1>
 				</div>
 				<div className="pt-6 w-100% sm:w-[90%] m-auto opacity-60">
 					<p>
-						Crafter Catering is a specialized catering service that excels in catering for various events.
-						We understand the importance of creating an exceptional culinary experience for your guests and are
-						committed to providing high-quality food and exceptional service.
+						Welcome to Fresh Bites Grill, where we believe that good food should be both delicious and nutritious.
+						Our menu features a variety of fresh, flavorful dishes that are made with the finest ingredients
+						and prepared with care by our skilled chefs.
 					</p>
 
 					<p className="pt-4">
-						So, whether {"you're"} looking for delectable
-						pastries, scrumptious cakes, or mouth-watering savory dishes, Crafter Catering has got you covered.
+						At Fresh Bites Grill, {"we're"} committed to providing a warm and welcoming atmosphere where you can enjoy great food
+						and good company. Whether {"you're"} dining with friends, family, or colleagues, our friendly staff will
+						ensure that you have a memorable experience.
+					</p>
+
+					<p className="pt-4">
+						So come on in and experience the freshness and flavor of Fresh Bites Grill. We look forward to serving you!
 					</p>
 				</div>
 			</div>
