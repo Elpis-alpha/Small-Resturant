@@ -10,7 +10,7 @@ const LocationSection = () => {
 				</div>
 				<div className="w-[100%] md:w-[80%] md:pl-[20%] flex flex-col gap-6 py-12 md:py-32 z-20 outfade-loc">
 					<h1 className='font-sans font-bold text-4xl'>Our Location</h1>
-					<p className='opacity-80'>Our restaurant is nestled in the heart of the vibrant downtown area, surrounded by bustling shops and lively entertainment venues, providing a lively and energetic atmosphere for our diners to enjoy.</p>
+					<p className='opacity-80 max-w-3xl'>Our restaurant is nestled in the heart of the vibrant downtown area, surrounded by bustling shops and lively entertainment venues, providing a lively and energetic atmosphere for our diners to enjoy.</p>
 					<a href='https://goo.gl/maps/kV7AerxwHsTfSWqQ9' className='flex gap-2 items-center' target="_blank" rel="noopener noreferrer">
 						<FaMapMarkerAlt />
 						<span className='inline-block underline underline-offset-4'>Fresh Grill Bites, Sedona, Arizona, USA</span>

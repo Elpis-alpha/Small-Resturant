@@ -20,7 +20,7 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className="flex w-full justify-between pb-4 bg-[#ffffff05] border-b border-[#ffffff4d] md:gap-0 gap-2 relative backdrop-blur-md">
+			<nav className="flex w-full justify-between pb-4 bg-[#ffffff05] border-b border-[#ffffff4d] md:gap-0 gap-2 relative backdrop-blur-md max-w-7xl mx-auto">
 				<div className="h-[60px] flex-1 md:flex-initial">
 					<Link onClick={scrollHandler} href="/#section-home" className="contents"><ElpisImage src="/images/blur/logo.png" alt="Crafter" title="Crafter" className="h-full" /></Link>
 				</div>

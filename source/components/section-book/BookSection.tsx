@@ -11,128 +11,137 @@ const BookSection = () => {
 	const [time, setTime] = useState("");
 	const [people, setPeople] = useState("");
 	const [sendingMail, setSendingMail] = useState(false)
+	const minDate = new Date().toISOString().split("T")[0]
 
-	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (sendingMail) return toast.error("Please be patient")
 		setSendingMail(true)
 		toast.info("Sending mail")
 		const form = event.target as HTMLFormElement
-		emailjs.sendForm('service_vnmbxe9', 'template_dbkcwpl', form, '1kUZnj4b88VZl_Gfk')
-			.then((result) => {
-				setSendingMail(false)
-				toast.success("Email sent")
-				setName("")
-				setEmail("")
-				setPhone("")
-				setDate("")
-				setTime("")
-				setPeople("")
-				form.reset()
-			}, (error) => {
-				setSendingMail(false)
-				toast.error("Email failed to send")
-				console.log(error.text);
-			}).catch(err => {
-				toast.error("Email failed to send")
-				setSendingMail(false)
-			}).finally(() => {
-				setSendingMail(false)
-			});
+
+		try {
+			await emailjs.sendForm('service_vnmbxe9', 'template_dbkcwpl', form, '1kUZnj4b88VZl_Gfk')
+			toast.success("Email sent")
+			setName("")
+			setEmail("")
+			setPhone("")
+			setDate("")
+			setTime("")
+			setPeople("")
+			form.reset()
+		} catch (error) {
+			toast.error("Email failed to send")
+			console.log(error)
+		} finally {
+			setSendingMail(false)
+		}
 	};
 
 	return (
 		<section id="section-book" className="w-full px-6 md:px-12 py-32">
-			<div className="flex flex-col gap-4 z-20">
-				<h1 className='font-sans font-bold text-4xl text-center'>Book A Table Now</h1>
-				<form onSubmit={handleSubmit} className="bg-white mx-auto max-w-3xl bg-opacity-30 p-6 shadow-md flex flex-wrap justify-between backdrop-blur-sm">
-					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
-						<label htmlFor="name" className="block mb-2">
+			<div className="mx-auto max-w-7xl flex flex-col gap-8 z-20">
+				<div className="text-center flex flex-col gap-3">
+					<h1 className='font-sans font-bold text-4xl'>Book A Table Now</h1>
+					<p className='opacity-60 max-w-2xl mx-auto'>Reserve your spot in seconds. Fill in your details and our team will confirm your booking shortly.</p>
+				</div>
+				<form onSubmit={handleSubmit} className="bg-white bg-opacity-30 p-6 md:p-8 shadow-md backdrop-blur-sm rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+					<div className="w-full">
+						<label htmlFor="name" className="block mb-2 text-sm font-semibold opacity-80">
 							Name
 						</label>
 						<input
+							id="name"
 							type="text"
 							name="name"
 							value={name}
 							onChange={(event) => setName(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							autoComplete="name"
+							className="w-full px-4 py-3 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. Alice Henderson'
 							required
 						/>
 					</div>
-					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
-						<label htmlFor="email" className="block text-gray-700 mb-2">
+					<div className="w-full">
+						<label htmlFor="email" className="block mb-2 text-sm font-semibold opacity-80">
 							Email
 						</label>
 						<input
+							id="email"
 							type="email"
 							name="email"
 							value={email}
 							onChange={(event) => setEmail(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							autoComplete="email"
+							className="w-full px-4 py-3 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. alice@gmail.com'
 							required
 						/>
 					</div>
-					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
-						<label htmlFor="phone" className="block text-gray-700 mb-2">
+					<div className="w-full">
+						<label htmlFor="phone" className="block mb-2 text-sm font-semibold opacity-80">
 							Phone
 						</label>
 						<input
-							type="text"
+							id="phone"
+							type="tel"
 							name="phone"
 							value={phone}
 							onChange={(event) => setPhone(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							autoComplete="tel"
+							className="w-full px-4 py-3 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							placeholder='E.g. +974 4444 5020'
 							required
 						/>
 					</div>
-					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
-						<label htmlFor="date" className="block text-gray-700 mb-2">
+					<div className="w-full">
+						<label htmlFor="date" className="block mb-2 text-sm font-semibold opacity-80">
 							Date
 						</label>
 						<input
-							type="text"
+							id="date"
+							type="date"
 							name="date"
 							value={date}
 							onChange={(event) => setDate(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
-							placeholder='E.g. 25th December, 2024'
+							className="w-full px-4 py-3 font-medium shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							min={minDate}
 							required
 						/>
 					</div>
-					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
-						<label htmlFor="time" className="block text-gray-700 mb-2">
+					<div className="w-full">
+						<label htmlFor="time" className="block mb-2 text-sm font-semibold opacity-80">
 							Time
 						</label>
 						<input
-							type="text"
+							id="time"
+							type="time"
 							name="time"
 							value={time}
 							onChange={(event) => setTime(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
-							placeholder='E.g. 12:30pm'
+							className="w-full px-4 py-3 font-medium shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
 							required
 						/>
 					</div>
-					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
-						<label htmlFor="people" className="block text-gray-700 mb-2">
+					<div className="w-full">
+						<label htmlFor="people" className="block mb-2 text-sm font-semibold opacity-80">
 							People
 						</label>
 						<input
-							type="text"
+							id="people"
+							type="number"
 							name="people"
 							value={people}
 							onChange={(event) => setPeople(event.target.value)}
-							className="w-full px-4 py-2 font-medium placeholder:italic shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
-							placeholder='E.g. 3 people'
+							className="w-full px-4 py-3 font-medium shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-brightGreen focus:border-transparent bg-white bg-opacity-40"
+							placeholder='E.g. 3'
+							min={1}
 							required
 						/>
 					</div>
 					<button
 						type="submit"
-						className="px-4 py-2 font-semibold rounded-md focus:outline-none bg-brightGreen text-white hover:bg-hoverBrightGreen focus:bg-hoverBrightGreen"
+						className="w-full md:w-auto md:col-span-2 lg:col-span-3 justify-self-start px-6 py-3 font-semibold rounded-md focus:outline-none bg-brightGreen text-white hover:bg-hoverBrightGreen focus:bg-hoverBrightGreen"
 						disabled={sendingMail}
 					>
 						{sendingMail ? "Sending Mail..." : "Make a Reservation"}

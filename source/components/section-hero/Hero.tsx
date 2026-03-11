@@ -6,7 +6,7 @@ import ElpisImage from "../general/ElpisImage"
 const Hero = () => {
 
 	return (
-		<div className="flex flex-col md:flex-row">
+		<div className="flex flex-col md:flex-row max-w-7xl mx-auto">
 			<div className="flex flex-col gap-4 w-[100%] md:w-[60%] pt-4 md:py-8 z-20 justify-center outfade-hero">
 				<h1 className="font-sans font-black text-4xl ssm:text-5xl smm:text-6xl sm:text-7xl lg:text-8xl text-brightGreen whitespace-pre">Taste the<br />Difference</h1>
 				<p className="max-w-[550px]">Fresh Bites Grill serves delicious, nutritious meals made with the finest ingredients in a warm and welcoming atmosphere.</p>

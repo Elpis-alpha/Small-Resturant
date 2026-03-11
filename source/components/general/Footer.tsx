@@ -22,7 +22,7 @@ const Footer = () => {
 		// </footer>
 		<footer className="bg-lightGreen text-darkText">
 			<div className="w-full py-8 px-6 md:px-12 flex flex-col justify-between items-center">
-				<div className="flex justify-between w-full flex-col gap-4 lg:flex-row pb-4 mx-auto max-w-[1400px]">
+				<div className="flex justify-between w-full flex-col gap-4 lg:flex-row pb-4 mx-auto max-w-7xl">
 					<div className="max-lg:flex max-lg:items-center max-lg:justify-center max-lg:flex-col">
 						<ElpisImage src="/images/blur/logo.png" title="Crafter" alt="Site logo" className="w-auto h-16 mb-2" />
 						<p className="text-sm pt-3 text-center lg:text-left max-w-[400px]">Fresh Bites Grill serves delicious, nutritious meals made with the finest ingredients in a warm and welcoming atmosphere.</p>
