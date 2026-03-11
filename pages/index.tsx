@@ -25,7 +25,7 @@ export default function Home({ menu }: any) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#00c914" />
       </Head>
-      <main className='font-body text-darkText text-sm md:text-base z-20 min-h-screen flex flex-col tracking-wide font-semibold max-w-[1550px] mx-auto overflow-hidden'>
+      <main className='font-body text-darkText text-sm md:text-base z-20 min-h-screen flex flex-col tracking-wide font-semibold max-w-[1920px] mx-auto overflow-hidden'>
         <HeroSection />
         <AboutSection />
         <LocationSection />

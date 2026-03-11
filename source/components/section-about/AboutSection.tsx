@@ -7,7 +7,7 @@ const AboutSection = () => {
 				<div className="flex items-center justify-center">
 					<h1 className="font-sans font-black text-2xl ssm:text-3xl smm:text-4xl sm:text-5xl lg:text-6xl text-brightGreen">About Us</h1>
 				</div>
-				<div className="pt-6 w-100% sm:w-[90%] m-auto opacity-60">
+				<div className="pt-6 w-100% sm:w-[90%] m-auto opacity-60 mx-auto max-w-4xl">
 					<p>
 						Welcome to Fresh Bites Grill, where we believe that good food should be both delicious and nutritious.
 						Our menu features a variety of fresh, flavorful dishes that are made with the finest ingredients

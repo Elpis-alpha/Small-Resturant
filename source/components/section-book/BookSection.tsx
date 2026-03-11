@@ -45,7 +45,7 @@ const BookSection = () => {
 		<section id="section-book" className="w-full px-6 md:px-12 py-32">
 			<div className="flex flex-col gap-4 z-20">
 				<h1 className='font-sans font-bold text-4xl text-center'>Book A Table Now</h1>
-				<form onSubmit={handleSubmit} className="bg-white bg-opacity-30 p-6 shadow-md flex flex-wrap justify-between backdrop-blur-sm">
+				<form onSubmit={handleSubmit} className="bg-white mx-auto max-w-3xl bg-opacity-30 p-6 shadow-md flex flex-wrap justify-between backdrop-blur-sm">
 					<div className="mb-4 w-[100%] md:w-[48%] lg:w-[31%]">
 						<label htmlFor="name" className="block mb-2">
 							Name
