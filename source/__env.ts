@@ -1,5 +1,0 @@
-export const twitter = "https://twitter.com/elpis_alpha"
-export const instagram = "https://www.instagram.com/elpis_alpha"
-export const facebook = "https://www.facebook.com"
-export const mail = "mailto:elpis409@gmail.com"
-export const tel = "tel:+2349163704134"

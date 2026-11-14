@@ -4,15 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Lao:wght@700&display=swap" rel="stylesheet"></link>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#15100C" />
       </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
       <body>
         <Main />
         <NextScript />

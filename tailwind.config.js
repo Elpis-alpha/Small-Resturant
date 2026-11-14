@@ -1,66 +1,45 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
-
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./source/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./pages/**/*.{ts,tsx}', './source/**/*.{ts,tsx}'],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      emerald: colors.emerald,
-      indigo: colors.indigo,
-      yellow: colors.yellow,
-
-      // Site colors
-      darkText: '#383838',
-      lightGreen: '#00ff0014',
-      slightGreen: '#00ff0009',
-      linkHover: '#3ea74f',
-      brightGreen: '#00C914',
-      hoverBrightGreen: '#008a0e',
-      inputGreen: '#38383845',
-    },
-    fontFamily: {
-      "body": ["Roboto", "sans-serif"],
-      "sans": ["Noto Serif Lao", "sans-serif"]
-    },
-    screens: {
-      // => @media (min-width: 400px) { ... }
-      'ssm': '400px',
-      // => @media (min-width: 500px) { ... }
-      'smm': '500px',
-      // => @media (min-width: 640px) { ... }
-      'sm': '640px',
-      // => @media (min-width: 768px) { ... }
-      'md': '768px',
-      // => @media (min-width: 1024px) { ... }
-      'lg': '1024px',
-      // => @media (min-width: 1280px) { ... }
-      'xl': '1280px',
-      // => @media (min-width: 1536px) { ... }
-      '2xl': '1536px',
-    },
     extend: {
-      animation: {
-        opacity: 'opacity .5s ease-out 1',
+      colors: {
+        // Night over the desert
+        night: '#15100C',
+        char: '#1F1812',
+        soot: '#2B2219',
+        // Sandstone
+        bone: '#F4EAD8',
+        paper: '#EFE2CA',
+        dust: '#B5A792',
+        // Sunset
+        saffron: '#F3B43F',
+        ember: '#E8792C',
+        rock: '#C9482B',
+        maroon: '#7A2A1C',
+        // Juniper
+        juniper: '#3D5A45',
+        sage: '#9DB383',
+      },
+      fontFamily: {
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
+      transitionTimingFunction: {
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
       keyframes: {
-        opacity: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
-        }
-      }
+        spin: { to: { transform: 'rotate(360deg)' } },
+        pulseDot: {
+          '0%': { transform: 'scale(1)', opacity: '0.7' },
+          '100%': { transform: 'scale(2.6)', opacity: '0' },
+        },
+      },
+      animation: {
+        'spin-slow': 'spin 90s linear infinite',
+        'spin-badge': 'spin 22s linear infinite',
+        'pulse-dot': 'pulseDot 1.8s ease-out infinite',
+      },
     },
   },
   plugins: [],
