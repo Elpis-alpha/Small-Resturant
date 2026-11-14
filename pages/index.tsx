@@ -1,78 +1,66 @@
+import type { GetStaticProps } from 'next'
+import Head from 'next/head'
 import Footer from '@/source/components/general/Footer'
 import AboutSection from '@/source/components/section-about/AboutSection'
 import BookSection from '@/source/components/section-book/BookSection'
-import FranchiseSection from '@/source/components/section-franchise/FranchiseSection'
-import HeroSection from '@/source/components/section-hero/HeroSection'
+import FavouritesSection from '@/source/components/section-favourites/FavouritesSection'
+import Hero from '@/source/components/section-hero/Hero'
+import Navbar from '@/source/components/section-hero/Navbar'
 import LocationSection from '@/source/components/section-location/LocationSection'
 import MenuSection from '@/source/components/section-menu/MenuSection'
-import { createClient } from 'next-sanity'
-import Head from 'next/head'
-import imageUrlBuilder from "@sanity/image-url";
+import { getMenu } from '@/source/lib/menu'
+import type { MenuItem } from '@/source/lib/menu'
+import { site } from '@/source/site'
 
+type Props = { menu: MenuItem[]; origin: string }
 
-export default function Home({ menu }: any) {
+export default function Home({ menu, origin }: Props) {
   return (
     <>
       <Head>
-        <title>Fresh Bites Grill</title>
+        <title>{site.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Fresh Bites Grill offers a delicious and nutritious menu with something for everyone. Our skilled chefs prepare fresh, flavorful dishes using only the finest ingredients. Join us for a warm and welcoming dining experience." />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#00c914" />
+        <meta name="description" content={site.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={site.name} />
+        <meta property="og:title" content={site.title} />
+        <meta property="og:description" content={site.description} />
+        <meta property="og:image" content={`${origin}/og.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className='font-body text-darkText text-sm md:text-base z-20 min-h-screen flex flex-col tracking-wide font-semibold max-w-[1920px] mx-auto overflow-hidden'>
-        <HeroSection />
-        <AboutSection />
+
+      <a
+        href="#menu"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-full focus:bg-saffron focus:px-5 focus:py-3 focus:font-semibold focus:text-night"
+      >
+        Skip to the menu
+      </a>
+
+      <Navbar />
+
+      <main>
+        <Hero />
+        <AboutSection plates={menu.length} />
+        <FavouritesSection />
+        <MenuSection menu={menu} />
         <LocationSection />
-        <MenuSection menu={menu.filter((x: any) => x.name)} />
         <BookSection />
-        <FranchiseSection />
       </main>
+
       <Footer />
     </>
   )
 }
 
-const client = createClient({
-  projectId: "4birj5g8",
-  dataset: "production",
-  apiVersion: "2023-04-04",
-  useCdn: false
-});
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const host = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL ?? ''
+  const origin = host && !host.startsWith('http') ? `https://${host}` : host
 
-const builder = imageUrlBuilder(client);
-
-function urlFor(source: any) {
-  return builder.image(source);
-}
-
-export const getStaticProps = async () => {
-  const data = await client.fetch(`*[_type == "menu"]`);
   return {
-    props: {
-      menu: data.map((it: any) => {
-        const image = urlFor(it.image).url()
-        return { ...it, image }
-      }),
-      // menu: [
-      //   {
-      //     _createdAt: '2023-04-09T22:32:05Z',
-      //     _id: '3335c812-aa2b-4d56-906e-0a1b17a971a6',
-      //     _rev: 'hPMFYzf07LR1LZXhJyFnB1',
-      //     _type: 'menu',
-      //     _updatedAt: '2023-04-09T22:47:24Z',
-      //     category: 'Breakfast',
-      //     description: 'Two eggs any style, crispy bacon or sausage links, and your choice of toast or English muffin. Served with hash browns or home fries.',
-      //     image: 'https://cdn.sanity.io/images/4birj5g8/production/fae9769942b7072e8b0655e153fcdab3f5cdb0e3-1024x683.png',
-      //     name: 'Classic American Breakfast',
-      //     price: 9.99
-      //   }
-      // ]
-    },
-  };
-};
+    props: { menu: await getMenu(), origin: origin.replace(/\/$/, '') },
+    // Pick up menu edits from the CMS without a redeploy.
+    revalidate: 300,
+  }
+}

@@ -1,53 +1,105 @@
-import { scrollHandler } from '@/source/controllers/SpecialCtrl'
-import { facebook, instagram, twitter } from '@/source/__env'
-import Link from 'next/link'
-import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa'
-import ElpisImage from "./ElpisImage"
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import { site } from '@/source/site'
+import { HOUR_GROUPS } from '@/source/lib/hours'
+import AnchorLink from './AnchorLink'
+import { ArrowUpRight } from './Icons'
+import { FadeUp } from './Motion'
+import OpenStatus from './OpenStatus'
 
 const Footer = () => {
-	const currentYear = new Date().getFullYear();
-	return (
-		// <footer className="flex w-full flex-col md:flex-row justify-between items-center text-center px-[20px] lg:px-[50px] xl:px-[100px] py-[20px]  gap-[20px] ">
-		// 	<div className="h-[30px] md:h-[43px] flex-initial"><ElpisImage src="/images/blur/nav-logo.png" alt="Pixiu" title="Pixiu" className="h-full" /></div>
-		// 	<div className="flex flex-col gap-[8px]">
-		// 		<span>POWERED BY PIXIUVERSE</span>
-		// 		<span className="text-[#848484] uppercase">© {new Date().getFullYear()} PIXIUVERSE. All rights reserved.</span>
-		// 	</div>
-		// 	<div className="flex gap-[16px] justify-center">
-		// 		<a href="https://discord.com/" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><img src="/images/discord.png" alt="" /></a>
-		// 		<a href="https://twitter.com/" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><img src="/images/twitter.png" alt="" /></a>
-		// 		<a href="https://instagram.com/" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><img src="/images/insta.png" alt="" /></a>
-		// 		<a href="https://idk.com/" target="_blank" className="h-[18px] duration-75 transition-all hover:scale-110 flex" rel="noopener noreferrer"><img src="/images/mmeee.png" alt="" /></a>
-		// 	</div>
-		// </footer>
-		<footer className="bg-lightGreen text-darkText">
-			<div className="w-full py-8 px-6 md:px-12 flex flex-col justify-between items-center">
-				<div className="flex justify-between w-full flex-col gap-4 lg:flex-row pb-4 mx-auto max-w-7xl">
-					<div className="max-lg:flex max-lg:items-center max-lg:justify-center max-lg:flex-col">
-						<ElpisImage src="/images/blur/logo.png" title="Crafter" alt="Site logo" className="w-auto h-16 mb-2" />
-						<p className="text-sm pt-3 text-center lg:text-left max-w-[400px]">Fresh Bites Grill serves delicious, nutritious meals made with the finest ingredients in a warm and welcoming atmosphere.</p>
-					</div>
-					<div className="flex flex-col items-center text-left">
-						<ul className=" border-b pb-2 mb-1">
-							<li className="text-sm p-2 min-w-[70px] max-lg:justify-center lg:min-w-[80px] inline-flex"><Link onClick={scrollHandler} href="/#section-home">Home</Link></li>
-							<li className="text-sm p-2 min-w-[70px] max-lg:justify-center lg:min-w-[80px] inline-flex"><Link onClick={scrollHandler} href="/#section-about">About</Link></li>
-							<li className="text-sm p-2 min-w-[70px] max-lg:justify-center lg:min-w-[80px] inline-flex"><Link onClick={scrollHandler} href="/#section-location">Location</Link></li> <br />
-							<li className="text-sm p-2 min-w-[70px] max-lg:justify-center lg:min-w-[80px] inline-flex"><Link onClick={scrollHandler} href="/#section-menu">Menu</Link></li>
-							<li className="text-sm p-2 min-w-[70px] max-lg:justify-center lg:min-w-[80px] inline-flex"><Link onClick={scrollHandler} href="/#section-book">Book</Link></li>
-							<li className="text-sm p-2 min-w-[70px] max-lg:justify-center lg:min-w-[80px] inline-flex"><Link onClick={scrollHandler} href="/#section-franchise">Franchise</Link></li> <br />
-						</ul>
-						<ul className="flex flex-row items-center">
-							<li className="p-3"><a href={facebook} target="_blank" rel="noopener noreferrer"><FaFacebook className="text-2xl" /></a></li>
-							<li className="p-3"><a href={twitter} target="_blank" rel="noopener noreferrer"><FaTwitter className="text-2xl" /></a></li>
-							<li className='p-3'><a href={instagram} target="_blank" rel="noopener noreferrer"><FaInstagram className="text-2xl" /></a></li>
-						</ul>
-					</div>
-				</div>
-				<div className="container mx-auto text-sm text-center border-t pt-8">
-					<p>&copy; {currentYear} Crafter. All rights reserved.</p>
-				</div>
-			</div>
-		</footer>
-	)
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end end'] })
+  const wordmarkY = useTransform(scrollYProgress, [0.3, 1], ['38%', '0%'])
+
+  return (
+    <footer ref={ref} className="relative overflow-hidden bg-night pt-24 md:pt-32">
+      <div className="shell">
+        <div className="grid gap-14 lg:grid-cols-12">
+          <FadeUp className="lg:col-span-6">
+            <p className="label text-dust">Follow along</p>
+            <ul className="mt-6">
+              {site.socials.map((social) => (
+                <li key={social.label} className="border-b border-bone/15 first:border-t">
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between gap-6 py-5 transition-colors duration-300 hover:text-saffron"
+                  >
+                    <span className="font-display text-4xl font-medium tracking-[-0.02em] transition-transform duration-500 ease-out group-hover:translate-x-3 md:text-5xl">
+                      {social.label}
+                    </span>
+                    <span className="flex items-center gap-4 text-sm text-dust transition-colors duration-300 group-hover:text-saffron">
+                      <span className="hidden sm:inline">{social.handle}</span>
+                      <ArrowUpRight className="h-6 w-6 transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+
+          <FadeUp delay={0.1} className="grid grid-cols-2 gap-10 lg:col-span-5 lg:col-start-8">
+            <div>
+              <p className="label text-dust">Explore</p>
+              <ul className="mt-6 space-y-3 text-lg">
+                {[...site.nav, { label: 'Reserve', href: '#reserve' } as const].map((link) => (
+                  <li key={link.href}>
+                    <AnchorLink href={link.href} className="transition-colors duration-300 hover:text-saffron">
+                      {link.label}
+                    </AnchorLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="label text-dust">Hours</p>
+              <ul className="mt-6 space-y-3 text-sm text-dust">
+                {HOUR_GROUPS.map((group) => (
+                  <li key={group.label}>
+                    <span className="block text-bone">{group.label}</span>
+                    {group.text}
+                  </li>
+                ))}
+              </ul>
+              <OpenStatus className="mt-5 text-sm" />
+            </div>
+          </FadeUp>
+        </div>
+      </div>
+
+      <motion.p
+        aria-hidden
+        style={{ y: wordmarkY }}
+        className="text-sunset mt-16 select-none whitespace-nowrap text-center font-display text-[19.6vw] font-black leading-[0.8] tracking-[-0.04em] md:mt-20"
+      >
+        Fresh Bites
+      </motion.p>
+
+      <div className="relative border-t border-bone/15 bg-night">
+        <div className="shell flex flex-col gap-3 py-6 text-sm text-dust md:flex-row md:items-center md:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} {site.name}. A concept restaurant in {site.address.line.split(' 8')[0]}.
+          </p>
+          <p>
+            Designed &amp; built by{' '}
+            <a
+              href={site.credit.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bone underline decoration-saffron decoration-2 underline-offset-4 transition-colors duration-300 hover:text-saffron"
+            >
+              {site.credit.label}
+            </a>
+          </p>
+          <AnchorLink href="#top" className="label text-bone transition-colors duration-300 hover:text-saffron">
+            Back to top ↑
+          </AnchorLink>
+        </div>
+      </div>
+    </footer>
+  )
 }
+
 export default Footer

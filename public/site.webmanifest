@@ -1,6 +1,7 @@
 {
-	"name": "Freah Grill Bites",
-	"short_name": "Freah Grill Bites",
+	"name": "Fresh Bites Grill",
+	"short_name": "Fresh Bites",
+	"description": "Fire-grilled plates under the red rocks of Sedona, Arizona.",
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
+	"theme_color": "#15100C",
+	"background_color": "#15100C",
 	"display": "standalone"
 }
